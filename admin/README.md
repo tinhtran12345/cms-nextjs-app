@@ -58,6 +58,12 @@ FRONTEND_STORE_URL=http://localhost:3001
 STRIPE_WEBHOOK_SECRET=
 ```
 
+### Link database design
+
+```shell
+ https://drawsql.app/teams/dev-life/diagrams/cms-nextjs
+```
+
 ### Connect to PlanetScale and Push Prisma
 
 ```shell

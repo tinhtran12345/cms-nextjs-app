@@ -5,6 +5,14 @@ import { useParams, usePathname } from "next/navigation";
 
 import { cn } from "@/lib/utils";
 
+import { SideModal } from "./ui/side-modal";
+
+export type routeProps = {
+    href: string;
+    label: string;
+    active: boolean;
+};
+
 export function MainNav({
     className,
     ...props
@@ -56,27 +64,32 @@ export function MainNav({
     ];
 
     return (
-        <nav
-            className={cn(
-                "flex items-center space-x-4 lg:space-x-6 max-md:hidden",
-                className
-            )}
-            {...props}
-        >
-            {routes.map((route) => (
-                <Link
-                    key={route.href}
-                    href={route.href}
-                    className={cn(
-                        "text-sm font-medium transition-colors hover:text-primary",
-                        route.active
-                            ? "text-black dark:text-white"
-                            : "text-muted-foreground"
-                    )}
-                >
-                    {route.label}
-                </Link>
-            ))}
-        </nav>
+        <div className="flex w-full items-center justify-between">
+            <nav
+                className={cn(
+                    "flex items-center space-x-4 lg:space-x-6 max-md:hidden",
+                    className
+                )}
+                {...props}
+            >
+                {routes.map((route) => (
+                    <Link
+                        key={route.href}
+                        href={route.href}
+                        className={cn(
+                            "text-sm font-medium transition-colors hover:text-primary",
+                            route.active
+                                ? "text-black dark:text-white"
+                                : "text-muted-foreground"
+                        )}
+                    >
+                        {route.label}
+                    </Link>
+                ))}
+            </nav>
+            <div className="md:hidden">
+                <SideModal />
+            </div>
+        </div>
     );
 }
