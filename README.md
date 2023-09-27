@@ -1,3 +1,5 @@
+# I.Admin
+
 ### Công nghệ sử dụng
 
 -   Next.js 13 App Router, React, Tailwind, Prisma, MySQL,
@@ -20,7 +22,7 @@
 -   Order creation
 -   Stripe checkout
 -   Stripe webhooks
--   MySQL + Prisma + PlanetScale
+-   MONGODB + Prisma
 
 ### Prerequisites
 
@@ -84,3 +86,5 @@ Running commands with npm `npm run [command]`
 | command | description                              |
 | :------ | :--------------------------------------- |
 | `dev`   | Starts a development instance of the app |
+
+# II. Client
